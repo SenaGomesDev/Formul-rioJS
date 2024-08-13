@@ -3,9 +3,9 @@ const resultadoElemento = document.getElementById('resultado');
 
 function deposito(campoA, campoB) {
     if (campoB > campoA) {
-        return campoB;
+        return `Formulário válido, Campo B (${campoB}) é maior que Campo A (${campoA}).`;
     } else {
-        return "Atenção! - O campo B deve ser maior que o campo A.";
+        return `Atenção! - O campo B (${campoB})  deve ser maior que o campo A. (${campoA})`;
     }
 }
 
@@ -15,13 +15,8 @@ form.addEventListener('submit', function(event) {
     const campoA = parseFloat(document.getElementById('campoA').value);
     const campoB = parseFloat(document.getElementById('campoB').value);
     const resultado = deposito(campoA, campoB);
-    const resultadoElemento = document.getElementById('resultado');
-    resultadoElemento.innerHTML = resultado;
     
+    resultadoElemento.innerHTML = resultado;
+    alert(resultado);
 
-    if (resultado === campoB) {
-        alert(`Formulário válido, Campo B (${campoB}) é maior que Campo A! (${campoA}).`);
-    } else {
-        alert(resultado);
-    }
 });
